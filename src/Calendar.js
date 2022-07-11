@@ -18,7 +18,7 @@ export default function Calendar({
     selectDate,
     currentMonthNames
   } = useCalendar({
-    monthsToShow: 2,
+    monthsToShow: 1,
     currentMonth,
     setCurrentMonth: onChangeMonth,
     setSelectedDate: onSelectedDate,
@@ -47,7 +47,9 @@ export default function Calendar({
                 {formatToDay(day.date)} - {dayjs(day.date).format("ddd")}
               </div>
             ) : (
-              <div />
+              <div className="text-gray-400">
+                {formatToDay(day.date)} - {dayjs(day.date).format("ddd")}
+              </div>
             );
           });
         })}
